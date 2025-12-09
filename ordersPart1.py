@@ -37,3 +37,24 @@ def CalculateOrders():
         if (int(order[4]) == 1):
             sum +=  int(priceList['extra'])
         orderSum.append(sum)
+        
+def PrintOrders():
+    i = 0
+    for order in ordersParams:
+        print("--------------------------")
+        print("№ заказа       ", order[0])
+        print("Кол-во колбасы:", order[1], "шт")
+        print("Кол-во салата: ", order[2], "шт")
+        print("Кол-во сыра:   ", order[3], "шт")
+        if (int(order[4]) == 1):
+            print("Здесь:         ", "да")
+        elif (int(order[4]) == 0):
+            print("Здесь:         ", "нет")
+        print("Сумма:         ", orderSum[i], "руб")
+        i += 1
+
+
+# WriteOrders()
+ReadOrders()
+CalculateOrders()
+PrintOrders()
